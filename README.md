@@ -210,3 +210,17 @@ when trying to handle emojis in Go:
   _, e := emoji.Lookup("☺") // the VS16-less version of the emoji
   e.FullyQualifiesAs // ☺️, the VS16'd version
   ```
+
+## Contributing
+
+To update this package to the latest version of the Emoji specification, do the
+following:
+
+* Remove the data file in the `data/`, and replace it with the `emoji-test.txt`
+  file of the latest Emoji specification.
+* Update `col1` and `col2` in `internal/cmd/genemoji/main.go` if needed.
+* Run `go generate` and `go fmt emoji_data.go`.
+* Update `Version` in `emoji.go` to the new appropriate value.
+
+And that's all! Barring any significant changes to the Emoji data model in
+future versions of Unicode, nothing else should require updating.
