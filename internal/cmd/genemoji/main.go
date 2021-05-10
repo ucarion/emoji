@@ -79,8 +79,8 @@ func main() {
 		// exact values of the column alignments.
 		col1 := 55
 		col2 := 77
-		extraAfterCol1 := 2 // used to trim the semi-colon and space after col1
-		extraAfterCol2 := 3 // used to trim the space before and after emoji + "E" before version
+		extraAfterCol1 := 2 // used to trim after col1: semi-colon, space
+		extraAfterCol2 := 4 // used to trim after col2: pound, space before and after emoji, "E" before version
 
 		codepoints := strings.TrimSpace(l[0:col1])
 		status := strings.TrimSpace(l[col1+extraAfterCol1 : col2])
